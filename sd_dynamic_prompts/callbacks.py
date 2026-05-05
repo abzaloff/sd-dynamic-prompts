@@ -6,7 +6,6 @@ from typing import Any
 
 from dynamicprompts.wildcards import WildcardManager
 from modules import script_callbacks
-from modules.generation_parameters_copypaste import parse_generation_parameters
 from modules.script_callbacks import ImageSaveParams
 
 from sd_dynamic_prompts.pnginfo_saver import strip_template_info
@@ -15,6 +14,17 @@ from sd_dynamic_prompts.settings import on_ui_settings
 from sd_dynamic_prompts.wildcards_tab import initialize as initialize_wildcards_tab
 
 logger = logging.getLogger(__name__)
+
+
+def parse_generation_parameters(infotext: str) -> dict[str, Any]:
+    try:
+        from modules.infotext_utils import parse_generation_parameters as parse
+    except ImportError:
+        from modules.generation_parameters_copypaste import (
+            parse_generation_parameters as parse,
+        )
+
+    return parse(infotext)
 
 
 def register_prompt_writer(prompt_writer: PromptWriter) -> None:
