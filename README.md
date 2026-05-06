@@ -2,6 +2,7 @@
 A custom extension for [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) that implements an expressive template language for random or combinatorial prompt generation along with features to support deep wildcard directory structures.
 
 This is a fork made for ForgeNeo with Python 3.13 support.
+This fork is maintained for ForgeNeo. Compatibility with other Stable Diffusion WebUI versions, other Forge versions, or other related software is not guaranteed.
 
 Looking for ComfyUI nodes? Find them [here](https://github.com/adieyal/comfyui-dynamicprompts).
 
