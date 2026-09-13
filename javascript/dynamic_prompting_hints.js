@@ -1,8 +1,7 @@
 /* global titles:true */
 // Mouseover tooltips for various UI elements.
 // `titles` is already defined by A1111, so we just merge into it...
-titles = {
-  ...titles,
+Object.assign(titles, {
   "Dynamic Prompts enabled": "Disable dynamic prompts by unchecking this box.",
 
   "Combinatorial generation": `
@@ -58,4 +57,4 @@ If there are no wildcards then all the images will be identical.
 `.trim(),
   "Write raw prompt to image":
     "Write the prompt template into the image metadata",
-};
+});
